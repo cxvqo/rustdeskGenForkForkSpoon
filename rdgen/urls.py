@@ -16,6 +16,10 @@ Including another URLconf
 """
 import django
 
+from django.urls import path
+from django.views.generic.base import RedirectView
+from django.contrib.staticfiles.storage import staticfiles_storage
+
 from rdgenerator import views as views
 if django.__version__.split('.')[0]>='4':
     from django.urls import re_path as url
@@ -32,4 +36,5 @@ urlpatterns = [
     url(r'^startgh',views.startgh),
     url(r'^get_png',views.get_png),
     url(r'^save_custom_client',views.save_custom_client),
+    path("robots.txt",RedirectView.as_view(url=staticfiles_storage.url("robots.txt"))), # eh
 ]

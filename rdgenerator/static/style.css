@@ -1,0 +1,179 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+}
+
+.platform-logo {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 30px;
+    display: none;
+}
+
+.loading-text {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.note {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 15px;
+    background: rgba(244, 244, 244, 0.7);
+    padding: 10px;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.progressGrid {
+    display: grid;
+    grid-template-columns: 10px 300px 10px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 0;
+    overflow: hidden;
+    margin: 20px auto;
+    display: inline-block;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #3498db;
+    transition: width 0.5s ease-in-out;
+}
+
+#percentText {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    display: inline-block;
+}
+
+.download-section, .save-load-section-container, .section {
+    /*background: rgba(255, 255, 255, 0.8);*/
+    background-color: #F5F5F5;
+
+    padding: 8px;
+    box-shadow: 0px 2px 24px lightgray;
+}
+
+button, .download-link {
+    display: block;
+    padding: 4px;
+    border: 0;
+    margin: 2px;
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+}
+
+button:hover, .download-link:hover {
+    background-color: darkgray;
+    color: white;
+}
+
+button:active, .download-link:active {
+    background-color: gray;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        .platform * {
+            display: inline-block;
+        }
+
+        .platform, .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            max-width: 86%;
+            z-index: 10;
+        }
+        .container {
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .save-load-section-container {
+            position: fixed;
+            top: 4px;
+            left: 4px;
+            padding: 0px;
+            z-index: 100;
+        }
+        
+        .error { color: red; }
+        .errorlist {
+            color: red;
+            display: flex; /* Enable flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically (if needed) */
+            list-style: none; /* Remove bullet points if it's a list */
+            padding: 0; /* Remove default padding */
+            margin: 10px auto; /* Center the list itself, add some top/bottom margin */
+            width: fit-content; /* Make the width fit the content */
+        }
+
+        .errorlist li { margin: 5px; }
+
+        .help-text {
+            color: #ffd700;
+            font-style: italic;
+            animation: blink 2s infinite;
+            padding: 5px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-left: 10px;
+        }

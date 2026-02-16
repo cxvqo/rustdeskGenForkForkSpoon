@@ -16,3 +16,6 @@ rdgen/lib/
 rdgen/include/
 rdgen/pyvenv.cfg
 .env
+
+env.sh
+start.sh

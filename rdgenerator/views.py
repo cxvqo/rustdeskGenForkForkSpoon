@@ -297,7 +297,7 @@ def generator_view(request):
             print(f"GitHub API Response Body: {response.text}")
             print(f"=== End Debug ===")
             if response.status_code == 204:
-                return render(request, 'waiting.html', {'filename':filename, 'uuid':myuuid, 'status':"Starting generator...please wait", 'platform':platform})
+                return render(request, 'waiting.html', {'filename':filename, 'uuid':myuuid, 'status':"0% Starting generator, please wait...", 'platform':platform})
             else:
                 error_detail = response.json() if response.text else {"message": "Unknown error"}
                 return JsonResponse({
@@ -352,7 +352,7 @@ def get_png(request):
 def create_github_run(myuuid):
     new_github_run = GithubRun(
         uuid=myuuid,
-        status="Starting generator...please wait"
+        status="0% Starting generator, please wait..."
     )
     new_github_run.save()
 

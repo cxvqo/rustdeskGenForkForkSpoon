@@ -38,26 +38,11 @@ REPONAME = os.environ.get("REPONAME", 'creator')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True            
 
-#ALLOWED_HOSTS = ['*']
+DEBUG = True
 
-if GENURL:
-    parsed = urlparse(GENURL)
-    host = parsed.hostname
-    if not host:
-        raise ValueError(f"Invalid GENURL: {GENURL}")
-    ALLOWED_HOSTS = [host, 'creator.nas86.eu']
-
-    scheme = parsed.scheme or 'https'
-    port = f":{parsed.port}" if parsed.port else ""
-    auto_origin = f"{scheme}://{host}{port}"
-else:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1", 'creator.nas86.eu']
-    auto_origin = None
-#CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split()
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 

@@ -24,7 +24,7 @@
                 </ul></li>
             <li>github secrets (setup on your github account for your rdgen repo):  
                 <oul>
-                <li>GENURL="example.com:8000"  </li>
+                <li>GENURL="https://user:password@rdgen.example.com"  </li>
                 *this is the domain and port that your are running rdgen on, needs to be accesible on the internet, depending on how you have this setup the port may not be needed
                 </ul></li>
             <li>optional github secrets (for signing the code):  
@@ -45,7 +45,7 @@
 
 ### clone your rdgen repo, change bryangerlach to your github username
 
-> git clone https://github.com/bryangerlach/rdgen.git
+> git clone https://github.com/cxvqo/rustdeskGenForkForkSpoon.git
 
 ### open the rdgen directory
 
